@@ -14,16 +14,18 @@ public class eightBallAppController {
      * The number that they choose will return to the user
      * an answer to their question
      */
-    public void eightBallHandlerRequest(String userChoice){
+    public void eightBallHandlerRequest(String userChoice) {
         eightBallMap.put("one", new eightBallOne());
         eightBallMap.put("two", new eightBallTwo());
         eightBallMap.put("three", new eightBallThree());
         eightBallMap.put("four", new eightBallFour());
         eightBallMap.put("five", new eightBallFive());
+
+        eightBallHandler eightHandle = eightBallMap.get(userChoice);
+
+        eightHandle.result(userChoice);
     }
 
-    eightBallHandler eightHandle = eightBallMap.get(userChoice);
-    eightHandle.result(userChoice);
 
 
 }
